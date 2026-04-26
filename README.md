@@ -32,8 +32,7 @@ The system implements a secure, scalable, and automated fleet management model:
     ```bash
     terraform init
     terraform apply -auto-approve
-    
-```
+    ```
 
 ## Verification & Testing
 
@@ -44,31 +43,27 @@ To observe the modern fleet management in action:
     ```bash
     awslocal ssm describe-instance-information
     aws ssm describe-instance-information
-    
-```
+    ```
 
 2.  **Start a Secure Session (Conceptual):**
     In a real environment, you would access an instance without SSH:
     ```bash
     aws ssm start-session --target <INSTANCE_ID>
-    
-```
+    ```
 
 3.  **Perform an Instance Refresh:**
     Simulate a fleet-wide rolling update (e.g., after updating the Launch Template):
     ```bash
     awslocal autoscaling start-instance-refresh --auto-scaling-group-name ssm-managed-fleet
     aws autoscaling start-instance-refresh --auto-scaling-group-name ssm-managed-fleet
-    
-```
+    ```
 
 4.  **Monitor Refresh Status:**
     Track the progress of the rolling update:
     ```bash
     awslocal autoscaling describe-instance-refreshes --auto-scaling-group-name ssm-managed-fleet
     aws autoscaling describe-instance-refreshes --auto-scaling-group-name ssm-managed-fleet
-    
-```
+    ```
 
 ## Cleanup
 
